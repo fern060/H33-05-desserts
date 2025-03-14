@@ -25,12 +25,18 @@
         </div>
 
         <div class="category" id="category2">
-            <p>Icecream</p>
+            <p>Waffles</p>
             <p><input type="submit" value="Pure" id="pure"></p>
             <p><input type="submit" value="Sugar" id="sugar"></p>
             <p><input type="submit" value="Syrup" id="syrup"></p>
         </div>
 
+        <div class="category" id="category3">
+            <p>Other</p>
+            <p><input type="submit" value="Coffee" id="coffee"></p>
+            <p><input type="submit" value="Fruit" id="fruit"></p>
+            <p><input type="submit" value="Tea" id="tea"></p>
+        </div>
 
 
     </div>
@@ -40,17 +46,13 @@
 </div>
 
     <script>
-        $("#chocolate").click(function(){
-        $(".info").attr("src", "category_01/chocolate/chocolate.txt")
-        })
-        
-        $("#vanilla").click(function(){
-        $(".info").attr("src", "category_01/vanilla/vanilla.txt")
-        })
-
-        $("#strawberry").click(function(){
-        $(".info").attr("src", "category_01/strawberry/strawberry.txt")
-        })
+        var category1 = $("#category1 input")
+        for (var button of category1){
+            $(button).click(function(event){
+                var id = event.currentTarget.id
+                $(".info").attr("src", `category_01/${id}/${id}.txt`)
+            })
+        }
 
         var category2 = $("#category2 input")
         for (var button of category2){
@@ -60,6 +62,13 @@
             })
         }
 
+        var category3 = $("#category3 input")
+        for (var button of category3){
+            $(button).click(function(event){
+                var id = event.currentTarget.id
+                $(".info").attr("src", `category_03/${id}/${id}.txt`)
+            })
+        }
 
     </script>
 </body>
